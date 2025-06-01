@@ -4,3 +4,4 @@ version=v1.0.0
 versionCode=1
 author=oliplusmzr
 description=Sim Bug Fix For G99
+updateJson=https://raw.githubusercontent.com/oliplusmzr/Sim_Bug_Fixer/master/update.json
