@@ -1,6 +1,6 @@
 {
   "version": "v1.0.0",
   "versionCode": 1,
-  "zipUrl": "https://raw.githubusercontent.com/oliplusmzr/Sim_Bug_Fixer/install.zip",
-  "changelog": "https://raw.githubusercontent.com/oliplusmzr/Sim_Bug_Fixer/changelog.md"
+  "zipUrl": "https://github.com/oliplusmzr/Sim_Bug_Fixer/releases/download/simfixer/Sim_Bug_Fixer_V1.0.0.zip",
+  "changelog": "https://github.com/oliplusmzr/Sim_Bug_Fixer/main/changelog.md"
 }
