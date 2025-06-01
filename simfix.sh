@@ -1,5 +1,11 @@
 #!/system/bin/sh
-log -p i -t SIM_FIX "SIM reset başlıyor..."
+
+LOGFILE="/sdcard/simfix_log.txt"
+
+{
+  echo "====== $(date) ======"
+  echo "SIM reset başlatıldı."
+} >> $LOGFILE
 
 svc data disable
 sleep 1
@@ -8,4 +14,7 @@ stop ril-daemon
 sleep 1
 start ril-daemon
 
-log -p i -t SIM_FIX "SIM reset tamamlandı."
+echo "SIM reset tamamlandı." >> $LOGFILE
+echo "" >> $LOGFILE
+
+log -p i -t SIM_FIX "SIM reset işlemi yapıldı, log yazıldı."
