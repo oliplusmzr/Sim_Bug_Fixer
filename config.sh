@@ -1,3 +1,5 @@
+#!/system/bin/sh
+AUTOMOUNT=false
 SKIPMOUNT=false
 PROPFILE=false
 POSTFSDATA=false
