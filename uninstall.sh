@@ -1,3 +1,7 @@
+#!/system/bin/sh
+rm -f /sdcard/simfix_log.txt
+rm -f /sdcard/simfix_log_date.txt
+
 # Don't modify anything after this
 if [ -f $INFO ]; then
   while read LINE; do
