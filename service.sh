@@ -1,24 +1,29 @@
 #!/system/bin/sh
-# SIM Bug Fix - Service Script
-
 MODDIR=${0%/*}
 LOGTAG="SIM_FIX"
 LOGFILE="/sdcard/simfix_log.txt"
+LOGDATE="/sdcard/simfix_log_date.txt"
+TODAY=$(date +%Y-%m-%d)
 
-log -p i -t $LOGTAG "Servis başlatıldı."
+# :)
+if [ ! -f "$LOGDATE" ] || [ "$(cat $LOGDATE)" != "$TODAY" ]; then
+    echo "$TODAY" > "$LOGDATE"
+    echo "=== $TODAY ===" > "$LOGFILE"
+fi
+
+log -p i -t $LOGTAG "Service Started."
 
 while true; do
-    # mCallState=2 → aktif görüşme, mCallState=0 → görüşme yok
     CALL_STATE=$(dumpsys telephony.registry | grep -m 1 'mCallState=' | awk -F= '{print $2}' | tr -d '\r')
 
     if [ "$CALL_STATE" = "0" ]; then
-        log -p i -t $LOGTAG "Görüşme yok, simfix.sh çalıştırılıyor."
-        echo "$(date) - SIMFIX çalıştı (Görüşme yok)" >> $LOGFILE
+        log -p i -t $LOGTAG "No call, running simfix.sh"
+        echo "$(date) - SIMFIX worked (No call)" >> $LOGFILE
         sh "$MODDIR/simfix.sh"
-        sleep 18000  # 5 saat uyku
+        sleep 18000  # 5 saat (60x60x5)
     else
-        log -p i -t $LOGTAG "Görüşme aktif, bekleniyor..."
-        echo "$(date) - Görüşme vardı, simfix iptal" >> $LOGFILE
-        sleep 60
+        log -p i -t $LOGTAG "Phone Call active, waiting..."
+        echo "$(date) - There was a phone call, canceling simfix" >> $LOGFILE
+        sleep 60  # Control
     fi
 done
