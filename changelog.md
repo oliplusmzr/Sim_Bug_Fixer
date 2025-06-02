@@ -1,3 +1,6 @@
+### v2.0.0 - 2.6.2025
+* Log system integrated.
+* Now the sim fix will postpone operation when you are on a phone call. In this way, there will be no call interruption.
 ### v1.0.3 - 1.6.2025
 * Bugs Fixed
 ### v1.0.2 - 1.6.2025
