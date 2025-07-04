@@ -1,6 +1,6 @@
 {
-  "version": "Titan",
-  "versionCode": 26,
-  "zipUrl": "https://github.com/oliplusmzr/Sim_Fix_For_G99/releases/download/Titan/Sim_Fix_For_G99-TITAN.zip",
-  "changelog": ""https://raw.githubusercontent.com/oliplusmzr/Sim_Fix_For_G99/main/CHANGELOG.md"
+    "version": "Orange",
+    "versionCode": 28,
+    "zipUrl": "https://github.com/oliplusmzr/Sim_Fix_For_G99/releases/download/Orange/Sim_Fix_For_G99_ORANGE.zip",
+    "changelog": "https://raw.githubusercontent.com/oliplusmzr/Sim_Fix_For_G99/main/CHANGELOG.md"
 }
